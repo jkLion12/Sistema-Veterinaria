@@ -126,9 +126,9 @@ export default function DashboardLayout({
                 <span>Clientes (Dueños)</span>
               </Link>
               <Link
-                href="/home/historial"
+                href="/home/historial-clinico"
                 className={`flex items-center space-x-3 p-2 rounded-lg transition ${
-                  isActive('/home/historial')
+                  isActive('/home/historial-clinico')
                     ? 'bg-blue-50 text-blue-700'
                     : 'hover:bg-gray-100 text-gray-700'
                 }`}
