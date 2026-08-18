@@ -1,7 +1,7 @@
 // src/app/citas/page.tsx
 export default function CitasPage() {
   return (
-    <div className="min-h-screen bg-gray-50 p-6 font-sans">
+    <div className="min-h-screen p-6 font-sans">
       {/* Encabezado */}
       <div className="mb-8 flex items-center justify-between">
         <div>
@@ -102,90 +102,124 @@ export default function CitasPage() {
         </div>
       </div>
 
-      {/* Tabla de citas */}
-      <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-        <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-gray-800">Lista de Citas</h2>
-          <div className="flex items-center space-x-2">
-            <input
-              type="text"
-              placeholder="Buscar..."
-              className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
-            />
-            <button className="rounded-lg bg-gray-100 px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-200 transition">
-              Filtrar
-            </button>
+      {/* Sección: Tabla de Citas Recientes + Próximas Citas */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Tabla de citas (ocupa 2/3) */}
+        <div className="lg:col-span-2 bg-white rounded-2xl shadow-md overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-gray-800">Citas Recientes</h2>
+            <button className="text-sm text-blue-600 hover:text-blue-800 font-medium">Ver todas →</button>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Paciente</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Propietario</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Motivo</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-100">
+                <tr className="hover:bg-gray-50 transition">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center">
+                      <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs mr-3">M</div>
+                      <span className="text-sm font-medium text-gray-900">Max</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Juan Pérez</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">2026-08-14 10:00</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Consulta general</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <span className="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800">Confirmada</span>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm">
+                    <button className="text-blue-600 hover:text-blue-800 mr-2 font-medium">Editar</button>
+                    <button className="text-gray-400 hover:text-gray-600">Ver</button>
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center">
+                      <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-xs mr-3">L</div>
+                      <span className="text-sm font-medium text-gray-900">Luna</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">María López</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">2026-08-14 11:30</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Vacunación</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <span className="px-3 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800">Pendiente</span>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm">
+                    <button className="text-blue-600 hover:text-blue-800 mr-2 font-medium">Editar</button>
+                    <button className="text-gray-400 hover:text-gray-600">Ver</button>
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center">
+                      <div className="h-8 w-8 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-xs mr-3">R</div>
+                      <span className="text-sm font-medium text-gray-900">Rocky</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Carlos Gómez</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">2026-08-15 09:00</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Cirugía</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <span className="px-3 py-1 text-xs font-medium rounded-full bg-red-100 text-red-800">Cancelada</span>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm">
+                    <button className="text-blue-600 hover:text-blue-800 mr-2 font-medium">Editar</button>
+                    <button className="text-gray-400 hover:text-gray-600">Ver</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Paciente</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Propietario</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Motivo</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-100">
-              <tr className="hover:bg-gray-50 transition">
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs mr-3">M</div>
-                    <span className="text-sm font-medium text-gray-900">Max</span>
-                  </div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Juan Pérez</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">2026-08-14 10:00</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Consulta general</td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800">Confirmada</span>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm">
-                  <button className="text-blue-600 hover:text-blue-800 mr-2 font-medium">Editar</button>
-                  <button className="text-gray-400 hover:text-gray-600">Ver</button>
-                </td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition">
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-xs mr-3">L</div>
-                    <span className="text-sm font-medium text-gray-900">Luna</span>
-                  </div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">María López</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">2026-08-14 11:30</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Vacunación</td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800">Pendiente</span>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm">
-                  <button className="text-blue-600 hover:text-blue-800 mr-2 font-medium">Editar</button>
-                  <button className="text-gray-400 hover:text-gray-600">Ver</button>
-                </td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition">
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="h-8 w-8 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-xs mr-3">R</div>
-                    <span className="text-sm font-medium text-gray-900">Rocky</span>
-                  </div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Carlos Gómez</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">2026-08-15 09:00</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Cirugía</td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-red-100 text-red-800">Cancelada</span>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm">
-                  <button className="text-blue-600 hover:text-blue-800 mr-2 font-medium">Editar</button>
-                  <button className="text-gray-400 hover:text-gray-600">Ver</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+
+        {/* Próximas Citas (1/3) */}
+        <div className="bg-white rounded-2xl shadow-md p-6">
+          <h2 className="text-lg font-semibold text-gray-800 mb-4">Próximas Citas</h2>
+          <ul className="space-y-4">
+            <li className="flex items-start space-x-3">
+              <div className="mt-1 h-2 w-2 rounded-full bg-blue-500"></div>
+              <div>
+                <p className="text-sm font-medium text-gray-800">Max - Juan Pérez</p>
+                <p className="text-xs text-gray-500">Hoy, 10:00</p>
+              </div>
+            </li>
+            <li className="flex items-start space-x-3">
+              <div className="mt-1 h-2 w-2 rounded-full bg-yellow-500"></div>
+              <div>
+                <p className="text-sm font-medium text-gray-800">Luna - María López</p>
+                <p className="text-xs text-gray-500">Hoy, 11:30</p>
+              </div>
+            </li>
+            <li className="flex items-start space-x-3">
+              <div className="mt-1 h-2 w-2 rounded-full bg-green-500"></div>
+              <div>
+                <p className="text-sm font-medium text-gray-800">Simba - Ana Torres</p>
+                <p className="text-xs text-gray-500">Mañana, 09:00</p>
+              </div>
+            </li>
+            <li className="flex items-start space-x-3">
+              <div className="mt-1 h-2 w-2 rounded-full bg-purple-500"></div>
+              <div>
+                <p className="text-sm font-medium text-gray-800">Coco - Luis Ramírez</p>
+                <p className="text-xs text-gray-500">Mañana, 14:30</p>
+              </div>
+            </li>
+          </ul>
+          <div className="mt-6 border-t border-gray-100 pt-4">
+            <button className="w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-md hover:bg-blue-700 transition">
+              Nueva Cita
+            </button>
+          </div>
         </div>
       </div>
     </div>
