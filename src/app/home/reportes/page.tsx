@@ -1,4 +1,4 @@
-// src/app/dashboard/reportes/page.tsx
+// src/app/home/reportes/page.tsx
 'use client';
 
 import {
