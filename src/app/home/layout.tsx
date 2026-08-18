@@ -145,9 +145,9 @@ export default function DashboardLayout({
             <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Inventario y Finanzas</h3>
             <div className="space-y-1">
               <Link
-                href="/dashboard/productos"
+                href="/home/productos"
                 className={`flex items-center space-x-3 p-2 rounded-lg transition ${
-                  isActive('/dashboard/productos')
+                  isActive('/home/productos')
                     ? 'bg-blue-50 text-blue-700'
                     : 'hover:bg-gray-100 text-gray-700'
                 }`}
@@ -169,9 +169,9 @@ export default function DashboardLayout({
                 <span>Proveedores</span>
               </Link>
               <Link
-                href="/dashboard/caja"
+                href="/home/caja"
                 className={`flex items-center space-x-3 p-2 rounded-lg transition ${
-                  isActive('/dashboard/caja')
+                  isActive('/home/caja')
                     ? 'bg-blue-50 text-blue-700'
                     : 'hover:bg-gray-100 text-gray-700'
                 }`}
@@ -188,9 +188,9 @@ export default function DashboardLayout({
             <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Administración</h3>
             <div className="space-y-1">
               <Link
-                href="/dashboard/usuarios"
+                href="/home/usuarios"
                 className={`flex items-center space-x-3 p-2 rounded-lg transition ${
-                  isActive('/dashboard/usuarios')
+                  isActive('/home/usuarios')
                     ? 'bg-blue-50 text-blue-700'
                     : 'hover:bg-gray-100 text-gray-700'
                 }`}
@@ -200,9 +200,9 @@ export default function DashboardLayout({
                 <span>Usuarios</span>
               </Link>
               <Link
-                href="/dashboard/empresa"
+                href="/home/empresa"
                 className={`flex items-center space-x-3 p-2 rounded-lg transition ${
-                  isActive('/dashboard/empresa')
+                  isActive('/home/empresa')
                     ? 'bg-blue-50 text-blue-700'
                     : 'hover:bg-gray-100 text-gray-700'
                 }`}
@@ -212,9 +212,9 @@ export default function DashboardLayout({
                 <span>Empresa</span>
               </Link>
               <Link
-                href="/dashboard/configuracion"
+                href="/home/configuracion"
                 className={`flex items-center space-x-3 p-2 rounded-lg transition ${
-                  isActive('/dashboard/configuracion')
+                  isActive('/home/configuracion')
                     ? 'bg-blue-50 text-blue-700'
                     : 'hover:bg-gray-100 text-gray-700'
                 }`}
@@ -231,9 +231,9 @@ export default function DashboardLayout({
             <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Reportes</h3>
             <div className="space-y-1">
               <Link
-                href="/dashboard/reportes"
+                href="/home/reportes"
                 className={`flex items-center space-x-3 p-2 rounded-lg transition ${
-                  isActive('/dashboard/reportes')
+                  isActive('/home/reportes')
                     ? 'bg-blue-50 text-blue-700'
                     : 'hover:bg-gray-100 text-gray-700'
                 }`}
