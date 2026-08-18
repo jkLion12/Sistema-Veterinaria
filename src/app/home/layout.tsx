@@ -157,9 +157,9 @@ export default function DashboardLayout({
                 <span>Productos (Inventario)</span>
               </Link>
               <Link
-                href="/dashboard/proveedores"
+                href="/home/proveedores"
                 className={`flex items-center space-x-3 p-2 rounded-lg transition ${
-                  isActive('/dashboard/proveedores')
+                  isActive('/home/proveedores')
                     ? 'bg-blue-50 text-blue-700'
                     : 'hover:bg-gray-100 text-gray-700'
                 }`}
